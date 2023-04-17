@@ -36,7 +36,25 @@ torchvision==0.9.0
 detectron2==0.5
 ```
 
-## Repository Setup
+## Repository Setup with Docker
+### Build the Image from the Dockerfile
+With the images to predict inside the `data` directory, run the following command.
+```shell
+docker build -t tdc-lc .
+```
+### Create a Container from the Image and access it
+```shell
+docker run -it --rm --entrypoint bash --name tdc-lc-docker tdc-lc
+```
+### Run Inference
+Inside the Docker, run the main script.
+```shell
+python main.py
+```
+The results will be available inside the `output` directory.
+
+
+## Repository Setup without Docker
 Please follow the instructions in order to use this repository effectively
 ### Clone the Repository
 ```shell
