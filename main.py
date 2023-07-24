@@ -15,7 +15,7 @@ _pipeline = Inference()
 with open(os.path.join(OUTPUT_DIR, 'result_count.csv'), 'w') as csv_file:
     writer = csv.writer(csv_file)
     writer.writerow(['file_name', 'count'])
-    for f in tqdm(os.listdir(DATA_DIR)[:21]):
+    for f in tqdm(os.listdir(DATA_DIR)):
         if f.endswith('.png'):
             fp = os.path.join(DATA_DIR, f)
             count, viz = _pipeline.infer(fp)
